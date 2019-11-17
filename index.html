@@ -4,30 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>YouTube video finder</title>
+    <title>Find a National Park</title>
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="container">
-        <h1>YouTube video finder</h1>
+        <h1>National Park Search:</h1>
 
         <form id="js-form">
-            <label for="search-term">Search term</label>
+            <p class="instructions">Type each state's two-letter abbreviation, followed by a comma to search in multiple states.</p>
+            <label for="search-term">State(s)</label>
             <input type="text" name="search-term" id="js-search-term" required>
-
             <label for="max-results">Maximum results to return</label>
             <input type="number" name="max-results" id="js-max-results" value="10">
-
             <input type="submit" value="Go!">
         </form>
 
-        <p id="js-error-message" class="error-message"></p>
+        
         <section id="results" class="hidden">
           <h2>Search results</h2>
           <ul id="results-list">
+            <li class="results-list-items">
+                <h3>Name</h3>
+                <p class="park-description">Description of park</p>
+                <p class="park-url">Find more information at: <a href = "" target= blank></a> </p>
+            </li>
           </ul>
         </section>
+        <section id="error" class="hidden">
+            <h2>Something went wrong:</h2>
+            <p id="js-error-message" class="error-message">No results found; please try again.</p>
+          </section>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
